@@ -1,0 +1,42 @@
+{% extends 'components_template/base_layout.html' %}
+
+{% block title %}Show Data{% endblock title %}
+{% block body %}
+
+<style>
+    .dataframe{
+        height: 400px !important;
+    }
+    .tableDiv table{
+        height: 400px !important;
+        max-height: 400px;
+        overflow-y: scroll;
+        overflow-x: scroll;
+    }
+</style>
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 login_form">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center ">
+                        <h2>Data in the File </h2>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col-12 text-center tableDiv">
+                        {{dataframe|safe}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(() => {
+        $('#show_data_link').addClass('active')
+    })
+</script>
+{% endblock body %}
